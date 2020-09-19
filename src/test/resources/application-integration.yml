@@ -1,0 +1,152 @@
+app:
+  folderDir: src/test/resources/man-challenge/
+  features:
+    - name: "A"
+      softwareCodesMandatory:
+        - code: GdS6TI
+        - code: 93ZSw9
+        - code: btZUSp
+        - code: MZgsou
+        - code: Di75Ry
+        - code: 0vhcNa
+        - code: 33MHDf
+        - code: Di75Ry
+        - code: L34Pur
+      softwareCodesInvalid:
+        - code: ykzkfK
+        - code: 87Zhwo
+        - code: y4XKWo
+        - code: ay0pW2
+        - code: 44OmDi
+        - code: aJsd3i
+        - code: Qoflqf
+        - code: 2EzZXE
+        - code: j3mmf8
+        - code: MUR8Lx
+        - code: E6GYk7
+        - code: rDJyQX
+      hardwareCodesMandatory:
+        - code: rlTcbX
+        - code: wEEA00
+        - code: SoF5uL
+        - code: VhB9VY
+        - code: NWytcy
+      hardwareCodesInvalid:
+        - code: yZDXJJ
+        - code: tMI8bI
+        - code: DS8tZU
+        - code: PgOtkv
+        - code: PuyTwj
+        - code: ObZw28
+        - code: ZCLFOe
+        - code: jyP5PK
+        - code: pS5ZQs
+        - code: rcjjPX
+        - code: 6VO6Uq
+        - code: DAlCk4
+        - code: YxKjcX
+    - name: "B"
+      softwareCodesMandatory:
+        - code: FhFXVE
+        - code: FVlp0N
+        - code: I25pUg
+        - code: PeQWGL
+        - code: LYZzKL
+        - code: Cd9t6T
+        - code: pYgxjp
+        - code: T55Adn
+        - code: cjKv9N
+      softwareCodesInvalid:
+        - code: yfepdF
+        - code: Q54BVi
+        - code: 1QNx4P
+        - code: u9XCsm
+        - code: RgrAEU
+        - code: 0M97HZ
+        - code: BD80qR
+        - code: RGOkrt
+        - code: y4XKWo
+        - code: LV7Msr
+        - code: 0OEvxe
+        - code: VLyf6R
+        - code: s1I5dm
+        - code: I4wRf9
+      hardwareCodesMandatory:
+        - code: fMm4Hl
+        - code: PWO7oa
+        - code: F73iHn
+      hardwareCodesInvalid:
+        - code: mrGqkV
+        - code: Ps19N7
+    - name: "C"
+      softwareCodesMandatory:
+        - code: CtbvOZ
+        - code: bpdM7a
+        - code: rTM6gD
+        - code: LvXPPT
+        - code: Gwz57A
+        - code: NNTgVk
+        - code: dt5WJj
+        - code: zTUQwE
+        - code: ufX8mD
+        - code: 0vhcNa
+        - code: UPCZFv
+        - code: uUZjNJ
+        - code: ljnm95
+        - code: QP8Bls
+        - code: egNmFq
+        - code: Gwz57A
+        - code: PJyE8c
+        - code: pYgxjp
+      softwareCodesInvalid:
+        - code: T2WuvF
+      hardwareCodesMandatory:
+        - code: wv2CZs
+        - code: CEuBzO
+        - code: Cu5fGc
+        - code: jvqI5i
+        - code: pZLSFn
+        - code: eUMxfa
+      hardwareCodesInvalid:
+        - code: JY3Vcn
+        - code: 8PielJ
+        - code: NcOLyY
+        - code: Zfahrb
+        - code: iKALCh
+        - code: 6IHTbr
+
+spring:
+  datasource:
+    url: jdbc:h2:~/test
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql=true:
+        enable_lazy_load_no_trans: true
+        event:
+          merge:
+            entity_copy_observer: allow
+
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        SQL: INFO
+#      type:
+#        descriptor:
+#          sql:
+#            BasicBinder: INFO
+

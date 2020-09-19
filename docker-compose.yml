@@ -1,0 +1,12 @@
+version: '2'
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd
+      MYSQL_DATABASE: man
+      MYSQL_USER: ~root
+      MYSQL_PASSWORD: passw0rd 
