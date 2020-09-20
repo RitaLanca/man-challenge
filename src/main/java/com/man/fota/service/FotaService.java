@@ -9,10 +9,13 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 @Service
 public class FotaService {
+
+    private static Logger log = Logger.getLogger(FotaService.class.getName());
 
     private VehicleService vehicleService;
     private FeatureService featureService;
@@ -42,7 +45,9 @@ public class FotaService {
     }
 
     public void loadFeatures() {
+        log.info("Loading features....");
         featureService.loadFeatures();
+        log.info("Features loaded");
     }
 
 }

@@ -1,12 +1,10 @@
-version: '2'
+version: '3'
+
 services:
-  db:
-    image: mysql:latest
-    restart: always
+  web:
+    image: spring-boot-rest-docker-image
+    build: .
     ports:
-      - 3306:3306
+      - 8080:8080
     environment:
-      MYSQL_ROOT_PASSWORD: passw0rd
-      MYSQL_DATABASE: man
-      MYSQL_USER: ~root
-      MYSQL_PASSWORD: passw0rd 
+      - WATCH_DIR=/var/files

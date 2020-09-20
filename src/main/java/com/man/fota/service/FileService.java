@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 @Transactional
 public class FileService {
 
-    private final static Logger log = Logger.getLogger(FileService.class.getName());
+    private static Logger log = Logger.getLogger(FileService.class.getName());
 
     private VehicleService vehicleService;
 

@@ -27,9 +27,8 @@ public class FeatureService {
     }
 
     public void loadFeatures() {
-        log.info("Loading features....");
         featureRepository.saveAll(properties.getFeatures());
-        log.info("All " + properties.getFeatures().size() + " features were loaded.");
+        log.info(properties.getFeatures().size() + " features were loaded.");
     }
 
     public List<Feature> getAllCompatibleFeatures(Vehicle vehicle) {

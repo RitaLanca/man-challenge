@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 @Configuration
 public class FileWatcherConfig {
 
-    private Logger log = Logger.getLogger(FileWatcherConfig.class.getName());
+    private static Logger log = Logger.getLogger(FileWatcherConfig.class.getName());
 
     @Autowired
     private ManFotaChallengeProperties properties;
