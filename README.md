@@ -26,11 +26,23 @@ To get started you can simply clone this repository using git:
 
 ## Running Fota Service
 
+
+#### Jar
+
+Inside root folder, run `mvn clean install` and then go to the target folder
+
+
 #### Docker:
 
 Open a terminal and write the command
 
 `docker-compose up web`
+
+The application should start on port 8080, To call the Fota services endpoints:
+
+Run on a terminal,
+` docker-machine ip` command to check the docker ip machine
+
 
 
 #### Sending files
@@ -54,3 +66,27 @@ Run `docker container ls`
 You should get a list of containers, copy the container id that has the corresponding name to spring-boot-rest-docker-image
 
 
+## Endpoints
+
+* fota/vehicles/{vin}/installable
+
+* fota/vehicles/{vin}/incompatible
+
+ To test these endpoints, you can use, 
+ 
+ _`http://<docker-machine ip>:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/`_
+
+
+
+## Data Model
+
+The data model
+
+![](src/main/resources/images/data-model.PNG)
+
+
+## Run tests
+
+On root project folder, run
+
+`mvn clean verify`
