@@ -1,5 +1,5 @@
 app:
-  folderDir: C:\Users\user\Desktop\man-challenge\
+  folderDir: ${WATCH_DIR:C:\man-challenge}
   features:
     - name: "A"
       softwareCodesMandatory:
@@ -116,8 +116,10 @@ app:
         - code: 6IHTbr
 
 spring:
+  application:
+    name: man-challenge
   datasource:
-    url: jdbc:h2:~/test
+    url: jdbc:h2:mem:man-challenge
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -127,11 +129,11 @@ spring:
       enabled: true
 
   jpa:
-    show-sql: true
+  #  show-sql: true
     properties:
       hibernate:
         format_sql=true:
-        enable_lazy_load_no_trans: true
+  #      enable_lazy_load_no_trans: true
         event:
           merge:
             entity_copy_observer: allow
@@ -140,13 +142,4 @@ spring:
     serialization:
       INDENT_OUTPUT: true
 
-#logging:
-#  level:
-#    org:
-#      hibernate:
-#        SQL: INFO
-#      type:
-#        descriptor:
-#          sql:
-#            BasicBinder: INFO
 

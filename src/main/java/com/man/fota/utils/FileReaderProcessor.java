@@ -6,8 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -29,12 +27,12 @@ public class FileReaderProcessor {
                 String[] values = line.split(COMMA_DELIMITER);
                 Vehicle vehicle = vehicles.stream().filter(v -> v.getVin().equals(values[0])).findFirst().orElse(new Vehicle(values[0]));
                 if(isHardware){
-                    log.info("HARDWARE CODE: Add code "+ values[1] + " in vin " + vehicle.getVin());
+                    //log.info("HARDWARE CODE: Add code "+ values[1] + " in vin " + vehicle.getVin());
                     vehicle.getHardwareCodes().add(Configuration.ConfigurationBuilder.builder()
                             .code(values[1])
                             .build());
                 }else {
-                    log.info("SOFTWARE CODE: Add code "+ values[1] + " in vin " + vehicle.getVin());
+                   // log.info("SOFTWARE CODE: Add code "+ values[1] + " in vin " + vehicle.getVin());
                     vehicle.getSoftwareCodes().add(Configuration.ConfigurationBuilder.builder()
                             .code(values[1])
                             .build());

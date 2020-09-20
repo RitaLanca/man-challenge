@@ -11,9 +11,12 @@ import org.springframework.context.annotation.Configuration;
 
 import java.io.File;
 import java.time.Duration;
+import java.util.logging.Logger;
 
 @Configuration
 public class FileWatcherConfig {
+
+    private Logger log = Logger.getLogger(FileWatcherConfig.class.getName());
 
     @Autowired
     private ManFotaChallengeProperties properties;
@@ -27,6 +30,7 @@ public class FileWatcherConfig {
         fileSystemWatcher.addSourceDirectory(new File(properties.getFolderDir()));
         fileSystemWatcher.addListener(new CustomFileChangeListener(context.getBean(FileService.class)));
         fileSystemWatcher.start();
+        log.info("Waiting for files in " + properties.getFolderDir() +" ....");
         return fileSystemWatcher;
     }
 

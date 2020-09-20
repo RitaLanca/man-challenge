@@ -29,7 +29,7 @@ public class FileService {
         Long start = System.currentTimeMillis();
         List<Vehicle> vehicles = vehicleService.importVehicles(FileReaderProcessor.readFile(file,vehiclesList));
         log.info("Saved vehicles: " + vehicles.size());
-        System.out.println("Total time:" + (System.currentTimeMillis() - start));
+        log.info("Total time:" + (System.currentTimeMillis() - start));
     }
 
     public void deleteFile(File file) {

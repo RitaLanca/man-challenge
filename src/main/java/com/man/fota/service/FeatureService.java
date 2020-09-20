@@ -6,12 +6,16 @@ import com.man.fota.domain.entity.Feature;
 import com.man.fota.domain.entity.Vehicle;
 import com.man.fota.domain.repository.FeatureRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class FeatureService {
+
+    private static Logger log =  Logger.getLogger(FeatureService.class.getName());
 
     private ManFotaChallengeProperties properties;
 
@@ -23,7 +27,9 @@ public class FeatureService {
     }
 
     public void loadFeatures() {
+        log.info("Loading features....");
         featureRepository.saveAll(properties.getFeatures());
+        log.info("All " + properties.getFeatures().size() + " features were loaded.");
     }
 
     public List<Feature> getAllCompatibleFeatures(Vehicle vehicle) {

@@ -127,11 +127,8 @@ spring:
       enabled: true
 
   jpa:
-    show-sql: true
     properties:
       hibernate:
-        format_sql=true:
-        enable_lazy_load_no_trans: true
         event:
           merge:
             entity_copy_observer: allow
@@ -140,13 +137,4 @@ spring:
     serialization:
       INDENT_OUTPUT: true
 
-#logging:
-#  level:
-#    org:
-#      hibernate:
-#        SQL: INFO
-#      type:
-#        descriptor:
-#          sql:
-#            BasicBinder: INFO
 

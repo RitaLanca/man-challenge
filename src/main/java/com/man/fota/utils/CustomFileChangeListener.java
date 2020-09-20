@@ -27,7 +27,6 @@ public class CustomFileChangeListener implements FileChangeListener {
     @Override
     public void onChange(Set<ChangedFiles> changeSet) {
         for(ChangedFiles cfiles : changeSet) {
-
             for(ChangedFile changedFile: cfiles.getFiles()) {
                 if( !isLocked(changedFile.getFile().toPath())) {
                     fileService.processFileInformation(changedFile.getFile());
